@@ -1,0 +1,9 @@
+body{
+    margin-right: calc(100vw - 100%);
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.row{
+    margin: 0px;
+}

@@ -1,0 +1,58 @@
+/* src/index.css */
+#wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar-wrapper {
+  min-height: 83vh;
+  width: 250px;
+  backdrop-filter: blur(30px);
+  background-color: rgba(49, 27, 51, 0.7); /* Fondo blanco con opacidad para permitir el desenfoque */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde opcional para mejor contraste */
+  padding: 15px; /* Espaciado interior opcional */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional para darle más profundidad */
+}
+
+#sidebar-wrapper .list-group-item {
+  color: #ffffff; /* Color del texto */
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  padding: 10px 15px; /* Relleno */
+  margin-bottom: 5px; /* Margen entre elementos */
+  border-radius: 5px; /* Esquinas redondeadas */
+  transition: background-color 0.3s, color 0.3s; /* Transición para suavizar los cambios de color */
+}
+
+#sidebar-wrapper .list-group-item:hover {
+  background-color: rgba(255, 255, 255, 0.849); /* Fondo al pasar el ratón por encima */
+  color: #000000; /* Color del texto al pasar el ratón por encima */
+}
+
+
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#page-content-wrapper {
+  flex: 1;
+  padding: 20px;
+}
+
+@media (max-width: 992px) {
+  #sidebar-wrapper {
+    display: none; /* Ocultar el sidebar en pantallas pequeñas */
+  }
+
+  #page-content-wrapper {
+    margin-left: 0; /* Eliminar el margen en pantallas pequeñas */
+  }
+}
+
+.cont{
+  justify-content: start;
+  width: 90%;
+  
+}
