@@ -12,6 +12,7 @@ import { Navigate } from "react-router-dom";
 import Titulo from "../../helpers/Titulo";
 import Table from "../Table";
 import DeleteRowButton from "../DeleteRowButton";
+import Input from "../Input";
 
 function CreateOrder() {
 
@@ -347,6 +348,16 @@ function CreateOrder() {
                             />
                         </ColumnForm>
                         <ColumnForm md={5}>
+                            <div className="flex flex-col items-start justify-center">
+                                <h1 className="font-bold ">Precio</h1>
+                                <Input
+                                    type="text"
+                                    placeholder="Escribe algo..."
+                                    value=""
+                                    required={true}
+                                    pattern=".*"
+                                />
+                            </div>
                             <label className="form-label">Descripción</label>
                             <input onChange={handleProducto} name="descripcion" value={producto.descripcion} type="text" aria-label="Last name" className="form-control" placeholder="ejem. azul marino" />
                         </ColumnForm>
@@ -380,6 +391,15 @@ function CreateOrder() {
 
                     </Table>
                 </ColumnForm>
+                <div className="flex justify-center items-center h-screen bg-gray-100">
+                    <div className="p-6 bg-white rounded-lg shadow-lg">
+                        <h1 className="text-2xl font-bold text-gray-800">¡Hola, Tailwind con Vite!</h1>
+                        <p className="mt-2 text-gray-600">Este es un ejemplo básico.</p>
+                        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                            Click aquí
+                        </button>
+                    </div>
+                </div>
             </div>
         </>);
 }
