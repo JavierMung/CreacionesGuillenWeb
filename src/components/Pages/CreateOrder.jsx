@@ -13,6 +13,8 @@ import Titulo from "../../helpers/Titulo";
 import Table from "../Table";
 import DeleteRowButton from "../DeleteRowButton";
 import Input from "../Input";
+import Page from "../Page";
+import Select from "../Select";
 
 function CreateOrder() {
 
@@ -249,8 +251,64 @@ function CreateOrder() {
 
     return (
         <>
-            <Titulo Titulo={"Crear Pedido"} />
-            <div className="row justify-content-center text-center p-sm-3 ">
+            <Page Title={"Crear pedido"}>
+                <form className="w-full max-w-lg mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="flex flex-col">
+                            <label className="text-gray-700 font-medium">Fecha de pedido</label>
+                            <Input
+                                placeholder="Fecha"
+                                type="date"
+                                value=""
+                                className="mt-1 p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <label className="text-gray-700 font-medium">Apellido</label>
+                            <Input
+                                placeholder="Apellido"
+                                type="text"
+                                value=""
+                                className="mt-1 p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div className="w-full max-w-lg mx-auto mt-10">
+                            <label className="block text-gray-700 font-medium mb-2">Producto</label>
+                            <Select
+                                options={[
+                                    { value: "opcion1", label: "Opción 1" },
+                                    { value: "opcion2", label: "Opción 2" },
+                                    { value: "opcion3", label: "Opción 3" },
+                                  ]}
+                                placeholder="Selecciona un producto"
+                                value=""
+                                onChange={(e) => console.log(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="w-full max-w-lg mx-auto mt-10">
+                            <label className="block text-gray-700 font-medium mb-2">Cliente</label>
+                            <Select
+                                options={[
+                                    { value: "opcion1", label: "Opción 1" },
+                                    { value: "opcion2", label: "Opción 2" },
+                                    { value: "opcion3", label: "Opción 3" },
+                                  ]}
+                                placeholder="Selecciona un cliente"
+                                value=""
+                                onChange={(e) => console.log(e.target.value)}
+                                required
+                            />
+                        </div>
+                    </div>
+                </form>
+            </Page>
+
+
+            {/*<Titulo Titulo={"Crear Pedido"} />
+            <div className="row justify-content-center text-center p-sm-3">
                 <Modal Titulo={"Solicitud de pedido"}  >
                     {messageModal}
                 </Modal>
@@ -400,7 +458,7 @@ function CreateOrder() {
                         </button>
                     </div>
                 </div>
-            </div>
+                                    </div>*/}
         </>);
 }
 
